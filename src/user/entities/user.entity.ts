@@ -19,6 +19,18 @@ export class UserEntity extends BaseEntity {
     @Column()
     numberPhone!: number
 
+    @Column()
+    city!: string
+
+    @Column()
+    province!: string
+
+    @Column()
+    password!: string
+    
+    @Column()
+    email!: string
+
     @OneToOne(()=> CustomerEntity, (customer) => customer.user)
     customer!: CustomerEntity
 }
