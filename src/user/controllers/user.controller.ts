@@ -9,11 +9,11 @@ export class UserController {
         try {
             const data = await this.userService.findAllUser()
             res.status(200).json(data)
-            
         } catch (e) {
             console.error(e);
         }
-    }    
+    }
+    
     async getUserById(req: Request, res: Response){
         const {id} = req.params
         try {
@@ -22,7 +22,8 @@ export class UserController {
         } catch (e) {
             console.error(e);
         }
-    }    
+    }
+
     async createUser(req: Request, res: Response){
         try {
             const data = await this.userService.createUser(req.body)
@@ -31,7 +32,8 @@ export class UserController {
         } catch (e) {
             console.error(e);
         }
-    }    
+    }
+
     async updateUser(req: Request, res: Response){
         const {id} = req.params
         try {

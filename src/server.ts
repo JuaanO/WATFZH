@@ -2,6 +2,7 @@ import express = require("express");
 import morgan = require("morgan");
 import cors = require("cors");
 import { UserRouter } from "./user/user.router";
+import { CategoryRouter } from "./category/category.router";
 import { ConfigServer } from "./config/config";
 
 class ServerBootstrap extends ConfigServer{
@@ -24,8 +25,10 @@ class ServerBootstrap extends ConfigServer{
     }
 
     routers(): Array<express.Router>{
-        return [new UserRouter().router]   
-    }
+        return [
+            new UserRouter().router,
+            new CategoryRouter().router
+    ];    }
 
     public listen(){
         this.app.listen(this.port, ()=> {
