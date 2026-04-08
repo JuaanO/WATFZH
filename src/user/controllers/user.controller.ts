@@ -73,6 +73,5 @@ export class UserController {
             return this.httpResponse.Error(res, e);
         }
     }
-
 }
 
