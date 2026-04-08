@@ -4,6 +4,10 @@ import cors = require("cors");
 import { UserRouter } from "./user/user.router";
 import { CategoryRouter } from "./category/category.router";
 import { ConfigServer } from "./config/config";
+import { CustomerRouter } from "./customer/customer.router";
+import { ProductRouter } from "./product/product.router";
+import { PurchaseRouter } from "./purchase/purchase.router";
+import { PurchaseProductRouter } from "./purchase/purchase-product.router";
 
 class ServerBootstrap extends ConfigServer{
 
@@ -27,7 +31,11 @@ class ServerBootstrap extends ConfigServer{
     routers(): Array<express.Router>{
         return [
             new UserRouter().router,
-            new CategoryRouter().router
+            new CategoryRouter().router,
+            new CustomerRouter().router,
+            new ProductRouter().router, 
+            new PurchaseRouter().router,
+            new PurchaseProductRouter().router
     ];    }
 
     public listen(){

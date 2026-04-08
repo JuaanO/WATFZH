@@ -20,7 +20,7 @@ export class UserService extends BaseService<UserEntity>{
         return (await this.execRepository).save(body)
     }
     
-    async deteleUser(id :string) :Promise <DeleteResult>{
+    async deleteUser(id :string) :Promise <DeleteResult>{
         return (await this.execRepository).delete({Id: id })
     }
     
